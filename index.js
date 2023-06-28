@@ -10,6 +10,14 @@ function getComputerChoice() {
     }
 }
 
+function getPlayerChoice() {
+    let playerSelection = prompt("Choose rock, paper, or scissors").toLowerCase();
+    while (playerSelection !== "rock" && playerSelection !== "scissors" && playerSelection !== "paper") {
+        playerSelection = prompt("Invalid input, please choose rock, paper, or scissors")
+    }
+    return playerSelection;
+}
+
 function determineWinner(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return "tie";
@@ -29,7 +37,7 @@ function game() {
     let computerScore = 0;
 
     for (let round = 1; round <= 5; round++) {
-        let playerSelection = prompt("Choose rock, paper, or scissors: ").toLowerCase();
+        let playerSelection = getPlayerChoice();
         let computerSelection = getComputerChoice();
         let winner = determineWinner(playerSelection, computerSelection);
 
