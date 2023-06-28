@@ -46,7 +46,7 @@ function game() {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}`)
                 playerScore++;
                 break;
-            case computerScore:
+            case computerSelection:
                 console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
                 computerScore++;
                 break;
