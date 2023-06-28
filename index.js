@@ -31,15 +31,19 @@ function game() {
     for (let round = 1; round <= 5; round++) {
         let playerSelection = prompt("Choose rock, paper, or scissors: ").toLowerCase();
         let computerSelection = getComputerChoice();
-        let result = playRound(playerSelection, computerSelection);
+        let winner = determineWinner(playerSelection, computerSelection);
 
-        console.log(result);
-        switch (result.charAt(4)) {
-            case "l":
+        switch (winner) {
+            case playerSelection:
+                console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+                playerScore++;
+                break;
+            case computerScore:
+                console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
                 computerScore++;
                 break;
-            case "w":
-                playerScore++;
+            default:
+                console.log(`Both ${playerSelection}, you tie!`);
         }
         console.log(`Computer: ${computerScore}\nPlayer: ${playerScore}`);
     }
