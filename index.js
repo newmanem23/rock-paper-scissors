@@ -19,7 +19,7 @@ function getPlayerChoice() {
         playerSelection !== "scissors" && 
         playerSelection !== "paper"
         ) {
-        playerSelection = prompt("Invalid input, please choose rock, paper,"
+        playerSelection = prompt("Invalid input, please choose rock, paper," +
         " or scissors").toLowerCase();
     }
     return playerSelection;
