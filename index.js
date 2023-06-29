@@ -32,16 +32,13 @@ function determineWinner(playerSelection, computerSelection) {
     switch (playerSelection){
         case "rock":
             return (computerSelection === "paper") ? 
-            computerSelection : 
-            playerSelection;
+            computerSelection : playerSelection;
         case "paper":
             return (computerSelection === "scissors") ? 
-            computerSelection : 
-            playerSelection;
+            computerSelection : playerSelection;
         case "scissors":
             return (computerSelection === "rock") ? 
-            computerSelection: 
-            playerSelection;
+            computerSelection: playerSelection;
         }
     }
 
