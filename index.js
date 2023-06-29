@@ -19,7 +19,7 @@ function getPlayerChoice() {
         playerSelection !== "scissors" && 
         playerSelection !== "paper"
         ) {
-        playerSelection = prompt("Invalid input, please choose rock, paper,"
+        playerSelection = prompt("Invalid input, please choose rock, paper," +
         " or scissors").toLowerCase();
     }
     return playerSelection;
@@ -56,11 +56,15 @@ function game() {
 
         switch (winner) {
             case playerSelection:
-                console.log(`You win! ${playerSelection} beats ${computerSelection}`)
+                console.log(
+                    `You win! ${playerSelection} beats ${computerSelection}`
+                    )
                 playerScore++;
                 break;
             case computerSelection:
-                console.log(`You lose! ${computerSelection} beats ${playerSelection}`)
+                console.log(
+                    `You lose! ${computerSelection} beats ${playerSelection}`
+                    )
                 computerScore++;
                 break;
             default:
