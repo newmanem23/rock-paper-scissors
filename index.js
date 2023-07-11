@@ -1,10 +1,6 @@
 function getComputerChoice() {
     let i = Math.floor(Math.random() * 100) % 3;
-    switch (i) {
-        case 0: return "Rock";
-        case 1: return "Scissors";
-        case 2: return "Paper";
-    }
+    return options[i];
 }
 
 function playRound(e) {
@@ -65,5 +61,6 @@ function checkGameWinner() {
 
 let computerScore = 0;
 let playerScore = 0;
+const options = ["Rock", "Paper", "Scissors"];
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', playRound));
