@@ -17,15 +17,18 @@ function playRound(e) {
     console.log(`Computer: ${computerSelection}\nPlayer: ${playerSelection}`);
     switch(winner) {
         case playerSelection:
+            playerScore++;
             console.log("Player wins");
             break;
         case computerSelection:
+            computerScore++;
             console.log("Computer wins");
             break;
         default: 
             console.log(`Both ${playerSelection}, tie`);
             break;
     }
+    console.log(`Player: ${playerScore}\nComputer: ${computerScore}`)
 }
 
 function determineWinner(playerSelection, computerSelection) {
