@@ -14,7 +14,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(200, 200, 200);
+    background-color: rgb(215, 215, 215);
     cursor: pointer;
 }
 
@@ -23,7 +23,8 @@ button:hover {
     display: flex;
     gap: 24px;
 }
-.score-container {
+.score-container,
+.message {
     text-align: center;
     margin-top: 16px;
 }

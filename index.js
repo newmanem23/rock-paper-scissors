@@ -1,12 +1,9 @@
 function getComputerChoice() {
     let i = Math.floor(Math.random() * 100) % 3;
     switch (i) {
-        case 0:
-            return "Rock";
-        case 1:
-            return "Scissors";
-        case 2:
-            return "Paper";
+        case 0: return "Rock";
+        case 1: return "Scissors";
+        case 2: return "Paper";
     }
 }
 
@@ -14,15 +11,18 @@ function playRound(e) {
     let playerSelection = e.target.innerText;
     let computerSelection = getComputerChoice();
     let winner = determineWinner(playerSelection, computerSelection);
-    console.log(`Computer: ${computerSelection}\nPlayer: ${playerSelection}`);
+    let message = document.querySelector('.message');
     switch(winner) {
         case playerSelection:
+            message.innerText = `You win!, ${playerSelection} beats ${computerSelection}`;
             playerScore++;
             break;
         case computerSelection:
+            message.innerText = `You lose!, ${computerSelection} beats ${playerSelection}`;
             computerScore++;
             break;
         default: 
+            message.innerText = `Both ${playerSelection}, it's a tie!`;
             break;
     }
     updateScores(playerScore, computerScore);
