@@ -59,8 +59,8 @@ function checkGameWinner() {
     else {
         message.innerText = ' You win!';
     }
-    const buttons = document.querySelector('button');
-    buttons.forEach(button => button.setAttribute("disabled", ""));
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => button.setAttribute("disabled", "");
 }
 
 let computerScore = 0;
