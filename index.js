@@ -2,66 +2,48 @@ function getComputerChoice() {
     let i = Math.floor(Math.random() * 100) % 3;
     switch (i) {
         case 0:
-            return "rock";
+            return "Rock";
         case 1:
-            return "scissors";
+            return "Scissors";
         case 2:
-            return "paper";
+            return "Paper";
+    }
+}
+
+function playRound(e) {
+    let playerSelection = e.target.innerText;
+    let computerSelection = getComputerChoice();
+    let winner = determineWinner(playerSelection, computerSelection);
+    console.log(`Computer: ${computerSelection}\nPlayer: ${playerSelection}`);
+    switch(winner) {
+        case playerSelection:
+            console.log("Player wins");
+            break;
+        case computerSelection:
+            console.log("Computer wins");
+            break;
+        default: 
+            console.log(`Both ${playerSelection}, tie`);
+            break;
     }
 }
 
 function determineWinner(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        return "tie";
-    }
+    if (playerSelection === computerSelection) return "tie";
     switch (playerSelection){
-        case "rock":
-            return (computerSelection === "paper") ? 
+        case "Rock":
+            return (computerSelection === "Paper") ? 
             computerSelection : playerSelection;
-        case "paper":
-            return (computerSelection === "scissors") ? 
+        case "Paper":
+            return (computerSelection === "Scissors") ? 
             computerSelection : playerSelection;
-        case "scissors":
-            return (computerSelection === "rock") ? 
+        case "Scissors":
+            return (computerSelection === "Rock") ? 
             computerSelection: playerSelection;
         }
-    }
-
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-
-    for (let round = 1; round <= 5; round++) {
-        let playerSelection = getPlayerChoice();
-        let computerSelection = getComputerChoice();
-        let winner = determineWinner(playerSelection, computerSelection);
-
-        switch (winner) {
-            case playerSelection:
-                console.log(
-                    `You win! ${playerSelection} beats ${computerSelection}`
-                    )
-                playerScore++;
-                break;
-            case computerSelection:
-                console.log(
-                    `You lose! ${computerSelection} beats ${playerSelection}`
-                    )
-                computerScore++;
-                break;
-            default:
-                console.log(`Both ${playerSelection}, you tie!`);
-        }
-        console.log(`Computer: ${computerScore}\nPlayer: ${playerScore}`);
-    }
-
-    if (computerScore === playerScore) {
-        console.log("It's a tie!");
-    } else if (computerScore > playerScore) {
-        console.log("Computer wins.");
-    } else {
-        console.log("You win!");
-    }
 }
 
-game();
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => button.addEventListener('click', playRound));
+let playerScore = 0;
+let computerScore = 0;
