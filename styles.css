@@ -24,11 +24,15 @@ button:hover {
     gap: 24px;
 }
 .score-container,
-.message {
+.message,
+.winner {
     text-align: center;
     margin-top: 16px;
 }
-
+.winner {
+    font-size: larger;
+    font-weight: bold;
+}
 h1 {
     margin: 100px 0px;
     text-align: center;
