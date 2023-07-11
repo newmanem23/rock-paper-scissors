@@ -10,6 +10,12 @@ button {
     flex: 1;
     max-width: 250px;
     font-size: large;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+button:hover {
+    background-color: rgb(200, 200, 200);
+    cursor: pointer;
 }
 
 .button-container {
