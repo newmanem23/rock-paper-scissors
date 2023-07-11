@@ -23,11 +23,17 @@ button:hover {
     display: flex;
     gap: 24px;
 }
+.score-container {
+    text-align: center;
+    margin-top: 16px;
+}
 
 h1 {
     margin: 100px 0px;
     text-align: center;
     font-size: xxx-large;
 }
+
+
 
 

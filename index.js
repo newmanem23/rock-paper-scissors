@@ -18,17 +18,14 @@ function playRound(e) {
     switch(winner) {
         case playerSelection:
             playerScore++;
-            console.log("Player wins");
             break;
         case computerSelection:
             computerScore++;
-            console.log("Computer wins");
             break;
         default: 
-            console.log(`Both ${playerSelection}, tie`);
             break;
     }
-    console.log(`Player: ${playerScore}\nComputer: ${computerScore}`)
+    updateScores(playerScore, computerScore);
 }
 
 function determineWinner(playerSelection, computerSelection) {
@@ -44,6 +41,11 @@ function determineWinner(playerSelection, computerSelection) {
             return (computerSelection === "Rock") ? 
             computerSelection: playerSelection;
         }
+}
+
+function updateScores(playerScore, computerScore) {
+    let scoreDisplay = document.querySelector('.score-container');
+    scoreDisplay.innerText = `Player: ${playerScore}\nComputer: ${computerScore}`;
 }
 
 const buttons = document.querySelectorAll('button');
